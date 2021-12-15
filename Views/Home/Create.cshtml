@@ -1,0 +1,29 @@
+﻿
+@model Movie
+@*This imports the class as well as any object we pull in*@
+
+<h2>Create New Movie</h2>
+<form asp-action="Create" method="post">
+    <label asp-for="Id" class="control-label"></label>
+    <input asp-for="Id" class="form-control" />
+    <span asp-validation-for="Id" class="text-danger"></span>
+    <label asp-for="Title" class="control-label"></label>
+    <input asp-for="Title" class="form-control" />
+    <span asp-validation-for="Title" class="text-danger"></span>
+    <label asp-for="Year" class="control-label"></label>
+    <input asp-for="Year" class="form-control" />
+    <span asp-validation-for="Year" class="text-danger"></span>
+    <label asp-for="RunTime" class="control-label"></label>
+    <input asp-for="RunTime" class="form-control" />
+    <span asp-validation-for="RunTime" class="text-danger"></span>
+    <label asp-for="Genre" class="control-label"></label>
+    <input asp-for="Genre" class="form-control" />
+    <span asp-validation-for="Genre" class="text-danger"></span>
+
+    <!--You still have access to all of your usual HTML elements with data annotations-->
+    <input type="submit" />
+</form>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
